@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+      <!-- <input type="text" v-model.lazy="name">
+      <!-- v-model 的三种后缀 v-model.lazy 懒加载，不会立即改变 -->
+      <!-- v-model.trim 去掉前后空格 -->
+      <!-- v-mode.number 转换为数字 -->
+      
+
+        <!-- <label>
+            男
+            <input v-model="sex" value="male" type="checkbox">
+        </label>
+        <label>
+            女
+                <input v-model="sex" value="famale" type="checkbox">
+            </label>
+            <br>
+           {{sex}}  -->
+      <!-- <textarea v-model="article">
+
+      </textarea> -->
+      <div>金美香你来自哪里？</div>
+      <select v-model="from" >
+          <option value="1">王家沟</option>
+          <option value="2">巴虎村</option>
+          <option value="3">滨河村</option>
+      </select>
+      {{from}}
+      <div>你要去哪里？ </div>
+      <select v-model="where" multiple>
+            <option value="1">王家沟</option>
+            <option value="2">巴虎村</option>
+            <option value="3">滨河村</option>
+            <option value="4">明星村</option>
+            <option value="5">啦啦村</option>
+      </select>
+      <br>
+      {{where}}
+    </div>
+
+</body>
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script>
+   let app = new Vue({
+        el: "#app",
+        data:{
+           sex:[],
+           article:'金美香你在哪里你是谁那你是劳动纠纷两件事的风景了多少积分了就是多了几分了解到死了',
+           from:'2',
+           where:[]
+           
+        }
+     
+    })
+</script>
+
+</html>

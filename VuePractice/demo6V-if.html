@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div id="app">
+            <div v-if="role=='admin'">hello</div>
+            <div v-else-if="role=='hr'">world</div>
+            <div v-else>fuck</div>
+
+        </div>
+    
+    </body>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script>
+        let app = new Vue({
+            el:'#app',
+            data:{
+                role:''
+            }
+        })
+        
+    </script>
+</html>

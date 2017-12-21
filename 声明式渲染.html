@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <template v-if="loginType">
+            <label>Username</label>
+            <input placeholder="Enter your username">
+        </template>
+        <template v-else>
+            <label>Email</label>
+            <input placeholder="Enter your email address">
+        </template>
+        <button @click="change">点我变换</button>
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            data: {
+                loginType: true
+            },
+            methods:{
+                change:function(){
+               this.loginType=!this.loginType
+              
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>

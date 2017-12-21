@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo">
+        {{fullName}} <br>
+        {{firstName}}<br>
+        {{lastName}}<br>
+    </div>
+    <script src="../node_modules/vue/dist/vue.js">
+       
+    </script>
+    <script>
+        var vm = new Vue({
+            el: '#demo',
+            data: {
+                firstName: 'Henry',
+                lastName: "Shang"
+            },
+
+            computed: {
+                fullName: {
+                    get: function () {
+                        return this.firstName + ' ' + this.lastName
+                    },
+                    set: function (newValue) {
+                        var names = newValue.split(' ')
+                        this.firstName = names[0]
+                        this.lastName = names[names.length - 1]
+                    }
+                }
+            }
+            /*
+            computed 重新计算的条件：1 存在依赖型数据 2 依赖型的数据发生改变
+            */
+
+        })
+        vm.fullName = 'Emily Jin'
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+    <div id="app">
+        <balance msg='hello'></balance>
+    </div>
+
+</body>
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script>
+    Vue.component('balance',{
+        template:`
+        <div>
+        <show @showMe=showMoney></show>
+        <div v-if="show">您的余额：￥50</div>
+        <div @click = onClick>点我</div>
+        </div>
+        `,
+        methods:{
+            showMoney(){
+                this.show=!this.show
+            },
+            onClick(){
+                alert(this.msg)
+            }
+            },
+            props:['msg'],
+            data:function(){
+             return {
+                 show:false,
+             }
+            },
+           
+    })
+    Vue.component('show',{
+        template:`
+        <button @click = display>显示余额</button>
+        `,
+        methods: {
+            display(){
+                this.$emit('showMe',{
+                    a:1,b:2
+                })
+            }
+        }
+    
+    })
+
+
+
+
+    new Vue({
+        el:'#app'
+    })
+    // Vue.component('balance', {
+    //     template: `
+    //         <div>
+    //         <show @showBalance="showmoney"></show>
+    //         <div v-if="show">您的余额：￥99</div>
+    //        </div>
+    //         `,
+    //     methods: {
+    //         showmoney(data) {
+    //             this.show = !this.show;
+    //             console.log('data:',data)
+    //         }
+    //     },
+    //     data: function () {
+    //         return {
+    //             show: false
+    //         }
+    //     }
+
+    // })
+    // Vue.component('show', {
+    //     template: `
+    //     <button @click="display">显示余额</button>
+    //     `,
+
+    //     methods: {
+    //         display() {
+    //             this.$emit('showBalance', {
+    //                 a: 1,
+    //                 b: 2
+    //             })
+    //         }
+    //     }
+    // })
+
+    // new Vue({
+    //     el: '#app'
+    // })
+
+</script>
+
+</html>

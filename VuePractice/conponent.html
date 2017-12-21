@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+
+<body>
+    <div id="app">
+        <alert></alert>
+    </div>
+
+
+</body>
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script>
+    let app = new Vue({
+        el: '#app',
+        components: {
+            alert: {
+                template: `
+                <div>
+                <button @click="show" class="btn btn-danger" type="button">谁是最好看的</button>
+                 <span v-if="isShow" class="btn btn-success">{{name}}</span>
+                </div>
+                 `,
+                data: function () {
+                    return {
+                        name: '金美香是最好看的',
+                        isShow: false
+                    }
+
+                },
+                methods: {
+                    show() {
+                        this.isShow = !this.isShow
+                    }
+                }
+            }
+        }
+    })
+</script>
+
+</html>

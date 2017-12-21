@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+   <div id="app">
+    <router-link to="/foo/herny"> Go to Foo</router-link>
+    <router-link to="/bar/xiang">Go to Bar </router-link>
+    <router-view ></router-view>
+
+   </div>
+    
+
+</body>
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script src="../node_modules/vue-router/dist/vue-router.js"></script>
+<script>
+    const Foo = { template:'<div>{{$route.params.id}}</div>'}
+    const Bar = {template:'<div>{{$route.params.id}}</div>'}
+    const routes =[
+        {path:'/foo/:id',component:Foo},
+        {path:'/bar/:id',component:Bar}
+    ]
+    const router = new VueRouter({
+        routes:routes
+    })
+   const app = new Vue({
+       el:'#app',
+       router
+   })
+</script>
+
+</html>

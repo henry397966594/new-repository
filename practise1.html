@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+    .isActive{
+        background: blue;
+        color: black;
+        display: block;
+        height: 30px;
+        width:100px;
+        margin: 0 auto
+    }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <button class="btn" :class="{'isActive' : isActive }" @click="toggle">点我</button>
+    </div>
+
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                words: 'hello world',
+                html:'<strong>使用v-html渲染</strong>',
+                isActive:false
+            },
+            methods:{
+                toggle:function(){
+                    this.isActive=true
+                },
+            }
+        })
+    </script>
+</body>
+
+</html>

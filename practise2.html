@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(item,index) in list">{{item}}</li>
+        </ul>
+        <div class="input-group">
+            <input type="text" class="form-control" v-model="userInput">
+            <span class="input-group-btn">
+                <button class="btn btn-danger" @click="addUser">增加</button>
+            </span>
+        </div>
+    </div>
+
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                list: [
+                    '星际牛仔',
+                    '攻壳特工队',
+                    '黑暗是指',
+                    '星球大战',
+                    '猿人星球',
+                ],
+                userInput: ''
+            },
+            methods: {
+                addUser() {
+                    this.list.push(this.userInput);
+                    this.userInput='';
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

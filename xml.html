@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>你叫什么，我也不知道你叫什么</p>
+    <h2>哈哈，我就是这么牛逼</h2>
+    <form >
+        <label for="male">MAN</label>
+        <input type="checkbox" name='man' id="male">
+        <br>
+        <label for="famle">WOMEN</label>
+        <input type="checkbox" name="women" id="famle">
+        
+
+    </form>
+
+    <script>
+        var xhr = new XMLHttpRequest()
+        console.log(xhr);
+
+        xhr.open('get', './new.json')
+        xhr.onreadystatechange=function(){
+            if(this.status===200&&this.readyState===4){
+                console.log(this.responseText)
+            }
+
+        }
+        xhr.send()
+
+
+
+
+    </script>
+</body>
+
+</html>

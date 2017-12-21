@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        ul {
+            width: 500px;
+            height: 500px;
+            background: rgb(233, 20, 108);
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        li {
+            color: white;
+            border: 1px solid yellow;
+            list-style: none;
+            height: 20px;
+            line-height: 20px;
+            width: 50px;
+            text-align: center;
+            flex: 1;
+            margin: 20px 10px;
+            transition: transform ease 1s;
+        }
+
+        li:hover {
+            color: aqua;
+            cursor: pointer;
+            background: blue;
+            font-size: 15px;
+            transform: translateY(50%)
+        }
+
+        li:nth-child(3):hover {
+            color: blue;
+            cursor: pointer;
+            background: blue;
+            font-size: 20px;
+            transform: translateY(-50%);
+            color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li>哈哈</li>
+            <li>嘿嘿</li>
+            <li>呵呵</li>
+            <li>呼呼</li>
+        </ul>
+    </div>
+</body>
+
+</html>
