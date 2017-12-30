@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="text">
+        <li node-type="1">惠普金融</li>
+        <li node-type="2">爱钱进</li>
+        <li node-type="3">硅谷中心</li>
+    </ul>
+    <script>
+     var text = document.getElementById('text');
+    var li = document.getElementsByClassName('li')
+    text.addEventListener('click', function (event) {
+        event = event || window.event;
+        var target = event.target || event.srcElement;
+        if (target.nodeName.toLowerCase() == 'li') {
+            alert(target.getAttribute("node-type"))
+        }
+    })
+    </script>
+</body>
+</html>

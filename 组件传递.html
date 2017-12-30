@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #app{
+        height:400px;
+        width: 400px;
+        margin: 0 auto;
+        background: blue;
+        position: relative;
+        
+    }
+   .button{
+       display: block;
+        height: 30px;
+        width:200px;
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%)
+
+        
+    }
+    .new{
+        display: block;
+        height: 30px;
+        width:200px;
+        margin: 0 auto;
+    }
+    p{
+        text-align: center;
+
+    }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <first :is-show="show" @hide="hideDialog"></first>
+        <button @click=" showDialog" class="button">显示弹框</button>
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+    Vue.component('first',{
+        template:`
+        <div class="dialog" v-show="isShow">
+        <p>这里是弹框子组件</p>
+        <button @click="toHide" class="new">关闭弹框</button>
+    </div>
+        `,
+        props:['isShow'],
+        methods: {
+            toHide(){
+                this.$emit('hide')
+            }
+        }
+    })
+  new Vue({
+        el:'#app',
+        data:{
+            show:false
+        },
+        methods: {
+            showDialog() {
+                this.show = true;
+            },
+            hideDialog() {
+                this.show = false;
+            }
+        }
+    })              
+    
+    </script>
+</body>
+</html>      

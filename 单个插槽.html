@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>我是父组件的标题</h1>
+   <my-component>
+       <p>这是一些 初试内容</p>
+       <p>这是更多 的初试内容</p>
+   </my-component>
+
+    </div>
+
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+    Vue.component('myComponent',{
+        template:`
+      <div>
+      <h2>我是子组件的标题</h2>
+      <slot>我是大哥，你是小弟,小弟永远是小弟</slot>
+      </div>
+        `
+    })
+     new Vue({
+        el:'#app'
+    })
+    
+    </script>
+</body>
+</html>
